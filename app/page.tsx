@@ -23,11 +23,16 @@ export default async function Home() {
   console.log(data)
   
   return (
-    <div className="grig grid-cols-1 lg:grid-cols-4 mt-5">      
+    <div className="grid grid-cols-1 md:grid-cols-2 mt-5 gap-5">
       {data.map((post, idx) => (
         <Card key={idx}>
-          <Image src={urlFor(post.titleImage).url()} alt="image" width={500} height={500} />
-
+          <Image
+            src={urlFor(post.titleImage).url()}
+            alt="image"
+            width={500}
+            height={500}
+            className="rounded-t-lg h-[200px] object-cover"
+          />
         </Card>
       ))}
     </div>
